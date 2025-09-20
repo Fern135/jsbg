@@ -1,3 +1,14 @@
+## to use 
+
+# 1 download
+
+# 2 cd into directory 
+
+# 3 run 
+```
+npm link
+```
+
 
 ```
 jsbg new <project-name> [options]
