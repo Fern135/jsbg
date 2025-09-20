@@ -1,6 +1,7 @@
 ## to use 
 
-# 1 download
+# 1 clone or download 
+git clone git@github.com:Fern135/jsbg.git
 
 # 2 cd into directory 
 
