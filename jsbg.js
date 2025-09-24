@@ -112,15 +112,53 @@ function usage() {
   jsbg new <project-name> [options]
 
 Run without options to get interactive prompts. Key flags:
-  --java <17|21|22|23|custom>  --boot <ver|latest>  --build <maven|gradle-kts|gradle>
-  --rest --webflux  --api-only --thymeleaf
-  --security --jwt --sessions --oauth --cors "*" --ratelimit
-  --openapi --apiversion <v1|header|none>
-  --sqlite --psg --msql --flyway|--liquibase --r2dbc --jpa --mapstruct --paging
-  --redis --kafka --rabbit --es --opensearch --s3 --mail
-  --demos-io --demos-cpu --demos-async --resilience --scheduled --sse --ws --grpc --graphql
-  --metrics --otel --logjson --actuator
-  -d|--docker --ngnx --ci --port <n>
+  --java            <17|21|22|23|custom> (default: 21)
+  --boot            <ver|latest> (default: latest)
+  --build           <maven|gradle-kts|gradle> (default: maven)
+  --rest            Use REST (Spring MVC) instead of WebFlux (default: true)
+  --webflux         Use WebFlux instead of REST (default: false)
+  --api-only        Use API-only (no HTML) (default: true)
+  --thymeleaf       Use Thymeleaf for HTML templates (default: false)
+  --security        Use Spring Security (default: true)
+  --jwt             Use JWT for authentication (default: true)
+  --sessions        Use sessions (default: false)
+  --oauth           Use OAuth (default: false)
+  --cors            Use CORS (default: "*")
+  --ratelimit       Use rate limiting (default: true)
+  --openapi         Use OpenAPI (default: true)
+  --apiversion      <v1|header|none>
+  --sqlite          Use SQLite (default: true)
+  --psg             Use Postgres
+  --msql            Use MySQL
+  --flyway          Use Flyway
+  --liquibase       Use Liquibase
+  --jpa             Use JPA (default: true)
+  --mapstruct       Use MapStruct
+  --paging          Use Paging
+  --redis           Use Redis
+  --kafka           Use Kafka
+  --rabbit          Use RabbitMQ
+  --es              Use Elasticsearch
+  --opensearch      Use OpenSearch
+  --s3              Use S3
+  --mail            Use Mail
+  --demos-io        Use Demos IO
+  --demos-cpu       Use Demos CPU
+  --demos-async     Use Demos Async
+  --resilience      Use Resilience
+  --scheduled       Use Scheduled
+  --sse             Use SSE
+  --ws              Use WebSockets
+  --grpc            Use gRPC
+  --graphql         Use GraphQL
+  --metrics         Use Metrics
+  --otel            Use OpenTelemetry
+  --logjson         Use LogJSON
+  --actuator        Use Actuator
+  -d|--docker       Use Docker
+  --ngnx            Use Nginx
+  --ci              Use CI (default: false)
+  --port <n>        Use port <n> default: 8080
 `);
 }
 
@@ -761,9 +799,9 @@ function writeLog(logMessage, logDirectory) {
 
 
 try{
-    main();
+  main();
 }
 catch(e){
-    writeLog(e, "logs");
-    process.exit(1);
+  writeLog(e, "logs");
+  process.exit(1);
 }
