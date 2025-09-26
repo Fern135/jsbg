@@ -1,7 +1,8 @@
 {
-    "name": "jsbg",
-    "version": "0.1.0",
-    "bin": { "jsbg": "./jsbg.js" },
-    "private": true
+  "name": "jsbg",
+  "version": "1.0.0",
+  "description": "python version needed >= 3.13",
+  "scripts": {
+    "start": "pip uninstall -y jsbg && python -m pip install -e . && jsbg"
   }
-  
+}

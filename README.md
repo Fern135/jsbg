@@ -1,16 +1,21 @@
-## to use 
+## to use jsbg
+
+python version needed >= 3.13
 
 # 1 clone or download 
 git clone git@github.com:Fern135/jsbg.git
 
 # 2 cd into directory 
+cd jsbg
 
-# 3 run 
+# 2.1 install needed tools
 ```
-npm link
+pip install -e .
+# or
+pipx install .
 ```
 
-
+# 2.2 run jsbg
 ```
 jsbg new <project-name> [options]
 
